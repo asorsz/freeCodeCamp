@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <title>freeCodeCamp - Product Landing Page</title>
+    <style>
+    @media (max-width: 700px) {
+  nav {flex-direction: column;}
+  video {width: 300px;}
+  main {margin-top: 250px;}
+}
+nav {
+  background-color: #180821;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+</style>
+  </head>
+  <body>
+      <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <header id="header">
+        
+      <img src="http://pigment.github.io/fake-logos/logos/large/color/crofts-accountants.png" alt="Crofts Accountants - Logo" id="header-img">
+      <nav id="nav-bar">
+        <div class="nav-item"><a href="#video" class="nav-link">Video</a></div>
+        <div class="nav-item"><a href="#form" class="nav-link">Form</a></div>
+        <div class="nav-item"><a href="#note" class="nav-link">Note</a></div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h1>See our accountants at work...</h1>
+      <video id="video" controls width="600">
+        <source src="https://github.com/intel-iot-devkit/sample-videos/raw/master/classroom.mp4" type="video/mp4">
+          Video not supported.
+      </video>
+    </section>
+    <section><h1>Register your interest...</h1>
+      <form id="form" action ="https://www.freecodecamp.com/email-submit" method="POST">
+        <input id="email" name="email" type="email" placeholder="Enter your email address">
+        <input id="submit" type="submit">
+      </form>
+    </section>
+    <section>
+        <h1>Our history...</h1>
+        <P id="note">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+          </P>
+    </section>
+      
+    </main> 
+    
+  </body>
+</html>

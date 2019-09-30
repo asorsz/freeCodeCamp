@@ -1,0 +1,87 @@
+html, body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  margin: 0px;
+  padding: 0px;
+  background-color: #FAEDCA;
+}
+
+main {
+  margin-top: 200px;
+}
+
+header {
+  background-color: #D8BEED;
+  margin: 0px;
+  padding-top: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+
+.nav-link {
+  color: #FAEDCA;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
+.nav-item {
+  min-width: 100px;
+  text-align: center;
+}
+
+img {
+  max-width: 400px;
+  display: block;
+  height: auto;
+  min-width: 200px;
+  margin: 0px auto 10px;
+}
+
+section {
+  background-color: white;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border-width: 1px;
+  border-color: #180821;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgb(23, 7, 32, 0.19), 0 6px 6px rgb(23, 7, 32, 0.23);
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0px auto 20px;
+}
+
+video {
+  margin: 0px auto;
+  display: block;
+}
+
+input#email {
+  height: 30px;
+  margin: 5px;
+  padding: 0px 10px;
+  width: 300px;
+  font-family: 'Poppins';
+}
+
+input#submit {
+  width: 200px;
+  margin-left: 20px;
+  margin-right: auto;
+  padding: 10px;
+  background-color: #FE5D26;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Poppins';
+}
+
+p {
+  font-size: 1.6rem;
+}
