@@ -5,10 +5,6 @@ html, body {
   font-size: calc(1em + 1vw);
 }
 
-@media (max-width: 600px) {
-  html {font-size: calc(1em + 2vw)}
-}
-
 nav {
   margin: 0px;
   padding: 0px;
