@@ -1,0 +1,153 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Muli', Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+nav {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: auto;
+  background-color: #0B132B;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+
+h1.nav-logo {
+  color: white;
+  margin: 0px;
+  padding: 15px 50px;
+  text-align: center;
+  font-size: 3rem;
+}
+
+ul.nav-links {
+  margin: 0px 20px 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: right;
+}
+
+li.nav-link {
+  margin: auto 20px;
+}
+
+a.nav-link {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+section {
+  margin: 0px;
+  width: 100%;
+  min-height: 100vh;
+ }
+
+section#welcome-section {
+  background-color: #3A506B;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1.welcome {
+  color: #D1D1D1;
+  margin: 20px;
+  padding: 0px;
+  text-align: center;
+  font-size: 6rem;
+}
+
+h2.welcome {
+  color: #3E8FA8;
+  margin: 10px;
+  padding: 0px;
+  text-align: center;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: normal;
+}
+
+section#projects {
+  background-color: #D1D1D1;
+  display: flex;
+  flex-direction: column;
+}
+
+h1.projects {
+  color: #3A506B;
+  margin: 80px auto 30px;
+  padding: 0px;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.tiles {
+  margin: 0px 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+a.project-tile {
+  width: 350px;
+  margin: 30px;
+  border: 1px solid #1C2541;
+}
+
+h3.projectlink {
+  width: auto; 
+  padding: 1.8rem 0px;
+  margin: 0px;
+  font-size: 1.8rem;
+  color: #D1D1D1;
+  background-color: #1C2541;
+  text-align: center;
+  vertical-align: middle;
+}
+
+section#contact {
+  background-color: #3E8FA8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1.contact {
+  color: #D1D1D1;
+  margin: 20px;
+  padding: 0px;
+  text-align: center;
+  font-size: 6rem;
+}
+
+h2.contact {
+  color: #1C2541;
+  margin: 10px;
+  padding: 0px;
+  text-align: center;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+a#profile-link {text-decoration: none;}
+
+img {
+  width: 350px;
+  height: 350px;
+}

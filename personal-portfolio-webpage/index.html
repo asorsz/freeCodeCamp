@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>freeCodeCamp - Personal Portfolio Page</title>
+    <style>
+    @media (max-width: 600px) {
+      nav {flex-direction: column;}
+      ul.nav-links {justify-content: space-between;
+                    margin-bottom: 20px;}
+    }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <nav id="navbar">
+      <h1 class="nav-logo">Andy Scott</h1>
+    
+     
+      <ul class="nav-links">
+        <li class="nav-link"><a class="nav-link" href="#welcome-section">About</a></li>
+        <li class="nav-link"><a class="nav-link" href="#projects">Portfolio</a></li>
+        <li class="nav-link"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="welcome-section">
+        <h1 class="welcome">Hi, I'm Andy Scott</h1>
+        <h2 class="welcome">Freelance web developer</h2>
+      </section>
+      <section id="projects">
+        <h1 class="projects">Some of my projects...</h1>
+        <div class="tiles">
+          <a href="../tribute-page/index.html" target="_blank" class="project-tile">
+            <h3 class="projectlink">Tribute Page</h3>
+            <img src="tribute-page.png" alt="Tribute Page">
+          </a>
+          <a href="../survey-form/index.html" target="_blank" class="project-tile">
+              <h3 class="projectlink">Survey Form</h3>
+              <img src="survey-form.png" alt="Tribute Page">
+          </a>
+          <a href="../product-landing-page/index.html" target="_blank" class="project-tile">
+              <h3 class="projectlink">Product Landing Page</h3>
+              <img src="product-landing-page.png" alt="Tribute Page">
+          </a>
+          <a href="../technical-documentation-page/index.html" target="_blank" class="project-tile">
+              <h3 class="projectlink">Technical Documentation Page</h3>
+              <img src="technical-documentation-page.png" alt="Tribute Page">
+          </a>
+
+        </div>
+      </section>
+      <section id="contact">
+          <h1 class="contact">Get in touch...</h1>
+          <a href="https://github.com/asorsz" target="_blank" id="profile-link"><h2 class="contact">GitHub</h2></a>
+      </section>
+
+    </main>
+  </body>
+
+</html>
