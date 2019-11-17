@@ -2,7 +2,7 @@ html, body {
   margin: 0px;
   padding: 0px;
   font-family: 'Muli', Arial, Helvetica, sans-serif;
-  font-size: calc(1em + 1vw);
+  font-size: calc(1em + 1vw)
 }
 
 nav {
@@ -93,7 +93,7 @@ h1.projects {
   margin: 80px auto 30px;
   padding: 0px;
   text-align: center;
-  font-size: 4rem;
+  font-size: 1.5rem;
 }
 
 .tiles {
@@ -109,17 +109,19 @@ a.project-tile {
   width: 350px;
   margin: 30px;
   border: 1px solid #1C2541;
+  text-decoration: none;
 }
 
 h3.projectlink {
   width: auto; 
-  padding: 1.8rem 0px;
+  padding: 0.5rem 0px;
   margin: 0px;
-  font-size: 1.8rem;
+  font-size: 0.7rem;
   color: #D1D1D1;
   background-color: #1C2541;
   text-align: center;
   vertical-align: middle;
+  text-decoration: none;
 }
 
 section#contact {
@@ -135,7 +137,7 @@ h1.contact {
   margin: 20px;
   padding: 0px;
   text-align: center;
-  font-size: 6rem;
+  font-size: 4rem;
 }
 
 h2.contact {
@@ -143,7 +145,7 @@ h2.contact {
   margin: 10px;
   padding: 0px;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   font-style: italic;
   font-weight: normal;
   text-decoration: none;
