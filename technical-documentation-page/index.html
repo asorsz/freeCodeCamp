@@ -1,49 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
-    <style>@media (max-width: 450px) {
-        nav {
-          margin: 0px;
-          background-color: #E3DCCD;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: auto;
-          z-index: 1;
-        }
-        main {
-          position: absolute;
-          left: 0px;
-          margin-top: 300px;
-          padding: 20px;
-          width: 100%;
-          z-index: 0;
-        }
-      }</style>
-    <title>freeCodeCamp - Technical Documentation Page</title>
-  </head>
-  <body>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <nav id="navbar">
-      <header><h3>Darth Vadar DOVAMO Runner</h3></header>
-      <ul class="nav">
-        <li class="nav"><a href="#declarations" class="nav-link">Declarations</a></li>
-        <li class="nav"><a href="#checks" class="nav-link">Checks</a></li>
-        <li class="nav"><a href="#inputs" class="nav-link">Inputs</a></li>
-        <li class="nav"><a href="#calculations" class="nav-link">Calculations</a></li>
-        <li class="nav"><a href="#results" class="nav-link">Results</a></li>
-        <li class="nav"><a href="#loop" class="nav-link">Loop</a></li>
-      </ul>
-    </nav>
-    <main id="main-doc">
-      <section class="main-section" id="declarations">
-        <header><h2>Declarations</h2></header>
-        <p>The script begins starts by making all of the necessary declarations for the successful running of the macro:</p>
-        <code><pre>Dim SS As String
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <title>freeCodeCamp - Technical Documentation Page</title>
+</head>
+<body>
+  <nav id="navbar">
+    <header><h3>Darth Vadar DOVAMO Runner</h3></header>
+    <ul class="nav">
+      <li class="nav"><a href="#declarations" class="nav-link">Declarations</a></li>
+      <li class="nav"><a href="#checks" class="nav-link">Checks</a></li>
+      <li class="nav"><a href="#inputs" class="nav-link">Inputs</a></li>
+      <li class="nav"><a href="#calculations" class="nav-link">Calculations</a></li>
+      <li class="nav"><a href="#results" class="nav-link">Results</a></li>
+      <li class="nav"><a href="#loop" class="nav-link">Loop</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="declarations">
+      <header><h2>Declarations</h2></header>
+      <p>The script begins starts by making all of the necessary declarations for the successful running of the macro:</p>
+      <code><pre>Dim SS As String
 Dim DOVAMO As String
 
 Dim FirstRow As Integer
@@ -73,14 +52,14 @@ Dim InvCapexYear As Integer
 Dim RefStartYear As Integer
 Dim RefEndYear As Integer
 Dim RefCapexYear As Integer</pre>
-        </code>
-        <p>Once these declarations are made, it moves on to some checks.</p>
-      </section>
-      <section class="main-section" id="checks">
-        <header><h2>Checks</h2></header>
-        <p>The script then runs some pre-flight checks to ensure all parameters are correct before proceeding.
-          This also includes a Calculation so the latest values are used (in the event of the spreadsheet not being set to auto-calculate:</p>
-        <code><pre>'Make sure all formulas have recalculated
+      </code>
+      <p>Once these declarations are made, it moves on to some checks.</p>
+    </section>
+    <section class="main-section" id="checks">
+      <header><h2>Checks</h2></header>
+      <p>The script then runs some pre-flight checks to ensure all parameters are correct before proceeding.
+        This also includes a Calculation so the latest values are used (in the event of the spreadsheet not being set to auto-calculate:</p>
+      <code><pre>'Make sure all formulas have recalculated
 Calculate
 
 'Make sure that the file names and working folder are correct and retrieve their values them from Menu sheet
@@ -101,184 +80,184 @@ RefCaseCol = Workbooks(SS).Worksheets("Setup").Range("H4").Value
 RefCaseStartYearCol = Workbooks(SS).Worksheets("Setup").Range("H5").Value
 RefCaseEndYearCol = Workbooks(SS).Worksheets("Setup").Range("H6").Value
 RefCaseCapexYearCol = Workbooks(SS).Worksheets("Setup").Range("H7").Value
-  
+
 'Start with Record "zero"
 IRow = FirstRow - 1
 ICol = FirstCol - 1
 
-  If Len(DOVAMO) = 0 Then
-    'If there is no DOVAMO selected, allow the user to select a DOVAMO...
-    Application.Run "Open_DOVAMO"
-    '...and then re-run this macro
-    Application.Run "Run_DOVAMOs"
-  Else
-    'If there is a DOVAMO selected...</pre></code>
-        <p>If the checks are failed, the user is prompted to correct them, otherwise the loop begins.</p>
-      </section>
-      <section class="main-section" id="inputs">
-        <header><h2>Inputs</h2></header>
-        <p>The script gathers the inputs from the first line of the input sheet, and populates the DOVAMO:</p>
-        <code><pre>'The macro will loop itself back to this point for each Record.
+If Len(DOVAMO) = 0 Then
+  'If there is no DOVAMO selected, allow the user to select a DOVAMO...
+  Application.Run "Open_DOVAMO"
+  '...and then re-run this macro
+  Application.Run "Run_DOVAMOs"
+Else
+  'If there is a DOVAMO selected...</pre></code>
+      <p>If the checks are failed, the user is prompted to correct them, otherwise the loop begins.</p>
+    </section>
+    <section class="main-section" id="inputs">
+      <header><h2>Inputs</h2></header>
+      <p>The script gathers the inputs from the first line of the input sheet, and populates the DOVAMO:</p>
+      <code><pre>'The macro will loop itself back to this point for each Record.
 Do
-    'Select the next record
-    IRow = IRow + 1
-    ICol = FirstCol - 1
+  'Select the next record
+  IRow = IRow + 1
+  ICol = FirstCol - 1
+  
+  'Investment Case
+  InvCaseStartYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, InvCaseStartYearCol).Value
+  InvCaseEndYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, InvCaseEndYearCol).Value
+  InvCaseCapexYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, InvCaseCapexYearCol).Value
     
-    'Investment Case
-    InvCaseStartYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, InvCaseStartYearCol).Value
-    InvCaseEndYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, InvCaseEndYearCol).Value
-    InvCaseCapexYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, InvCaseCapexYearCol).Value
+  'Investment Case Inputs
+  Do
+      ICol = ICol + 1
       
-    'Investment Case Inputs
-    Do
-        ICol = ICol + 1
-        
-        DSheet = Workbooks(SS).Worksheets("Inputs").Cells(2, ICol).Value
-        DCol = Workbooks(SS).Worksheets("Inputs").Cells(3, ICol).Value
-        DRow = Workbooks(SS).Worksheets("Inputs").Cells(4, ICol).Value
-        
-        If DCol = "START" Then
-            DCol = Application.WorksheetFunction.VLookup(InvCaseStartYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
-        ElseIf DCol = "END" Then
-            DCol = Application.WorksheetFunction.VLookup(InvCaseEndYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
-        ElseIf DCol = "CAPEX" Then
-            DCol = Application.WorksheetFunction.VLookup(InvCaseCapexYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
-        Else
-        End If
-                        
-        DCell = DCol & DRow
-                        
-        If Len(DSheet) = 0 Then
-        
-        Else
-            Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value = Workbooks(SS).Worksheets("Inputs").Cells(IRow, ICol).Value
-            Windows(DOVAMO).Activate
-        End If
-        
-    Loop Until ICol = RefCaseCol
-    Calculate
-    
-    'Investment Case Capital Lease Goal Seek
-    If Workbooks(DOVAMO).Worksheets("User Inputs IC").Range("AL988").Value = 1 Then
-        Application.Run "'" & DOVAMO & "'!CE_Goal_Seek_AOR"
-    Else
-    End If
-    
-    'Investment Case Operating Lease Goal Seek
-    If Workbooks(DOVAMO).Worksheets("User Inputs IC").Range("AO988").Value = 1 Then
-        Application.Run "'" & DOVAMO & "'!CE_Goal_Seek_AOR_TOL"
-    Else
-    End If
-                
-    'Check Reference Case
-    If Workbooks(SS).Worksheets("Inputs").Cells(IRow, ICol).Value = "Yes" Then
-        
-        'Reference Case
-        RefCaseStartYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, RefCaseStartYearCol).Value
-        RefCaseEndYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, RefCaseEndYearCol).Value
-        RefCaseCapexYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, RefCaseCapexYearCol).Value
-                    
-        DSheet = Workbooks(SS).Worksheets("Inputs").Cells(2, ICol).Value
-        DCol = Workbooks(SS).Worksheets("Inputs").Cells(3, ICol).Value
-        DRow = Workbooks(SS).Worksheets("Inputs").Cells(4, ICol).Value
-        DCell = DCol & DRow
-                        
-        Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value = 1
-        
-        'Reference Case Inputs
-        Do
-            ICol = ICol + 1
-        
-            DSheet = Workbooks(SS).Worksheets("Inputs").Cells(2, ICol).Value
-            DCol = Workbooks(SS).Worksheets("Inputs").Cells(3, ICol).Value
-            DRow = Workbooks(SS).Worksheets("Inputs").Cells(4, ICol).Value
-        
-            If DCol = "START" Then
-                DCol = Application.WorksheetFunction.VLookup(RefCaseStartYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
-            ElseIf DCol = "END" Then
-                DCol = Application.WorksheetFunction.VLookup(RefCaseEndYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
-            ElseIf DCol = "CAPEX" Then
-                DCol = Application.WorksheetFunction.VLookup(RefCaseCapexYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
-            Else
-            End If
-                        
-            DCell = DCol & DRow
-                        
-            If Len(DSheet) = 0 Then
-        
-            Else
-                Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value = Workbooks(SS).Worksheets("Inputs").Cells(IRow, ICol).Value
-                Windows(DOVAMO).Activate
-                End If
-        Loop Until ICol = LastCol
-        Calculate
-        
-        'Reference Case Capital Lease Goal Seek
-        If Workbooks(DOVAMO).Worksheets("User Inputs RC").Range("AL988").Value = 1 Then
-            Application.Run "'" & DOVAMO & "'!CE_Goal_Seek_AOR_BC"
-        Else
-        End If
-    
-        'Reference Case Operating Lease Goal Seek
-        If Workbooks(DOVAMO).Worksheets("User Inputs RC").Range("AO988").Value = 1 Then
-            Application.Run "'" & DOVAMO & "'!CE_Goal_Seek_AOR_TOL_BC"
-        Else
-        End If
+      DSheet = Workbooks(SS).Worksheets("Inputs").Cells(2, ICol).Value
+      DCol = Workbooks(SS).Worksheets("Inputs").Cells(3, ICol).Value
+      DRow = Workbooks(SS).Worksheets("Inputs").Cells(4, ICol).Value
+      
+      If DCol = "START" Then
+          DCol = Application.WorksheetFunction.VLookup(InvCaseStartYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
+      ElseIf DCol = "END" Then
+          DCol = Application.WorksheetFunction.VLookup(InvCaseEndYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
+      ElseIf DCol = "CAPEX" Then
+          DCol = Application.WorksheetFunction.VLookup(InvCaseCapexYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
+      Else
+      End If
+                      
+      DCell = DCol & DRow
+                      
+      If Len(DSheet) = 0 Then
+      
+      Else
+          Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value = Workbooks(SS).Worksheets("Inputs").Cells(IRow, ICol).Value
+          Windows(DOVAMO).Activate
+      End If
+      
+  Loop Until ICol = RefCaseCol
+  Calculate
+  
+  'Investment Case Capital Lease Goal Seek
+  If Workbooks(DOVAMO).Worksheets("User Inputs IC").Range("AL988").Value = 1 Then
+      Application.Run "'" & DOVAMO & "'!CE_Goal_Seek_AOR"
+  Else
+  End If
+  
+  'Investment Case Operating Lease Goal Seek
+  If Workbooks(DOVAMO).Worksheets("User Inputs IC").Range("AO988").Value = 1 Then
+      Application.Run "'" & DOVAMO & "'!CE_Goal_Seek_AOR_TOL"
+  Else
+  End If
+              
+  'Check Reference Case
+  If Workbooks(SS).Worksheets("Inputs").Cells(IRow, ICol).Value = "Yes" Then
+      
+      'Reference Case
+      RefCaseStartYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, RefCaseStartYearCol).Value
+      RefCaseEndYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, RefCaseEndYearCol).Value
+      RefCaseCapexYear = Workbooks(SS).Worksheets("Inputs").Cells(IRow, RefCaseCapexYearCol).Value
                   
-    Else
-        'No Reference Case
-        DSheet = Workbooks(SS).Worksheets("Inputs").Cells(2, ICol).Value
-        DCol = Workbooks(SS).Worksheets("Inputs").Cells(3, ICol).Value
-        DRow = Workbooks(SS).Worksheets("Inputs").Cells(4, ICol).Value
-        DCell = DCol & DRow
-        
-        Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value = 2
-        
-    End If</pre></code>
-        <p>The script automatically detects the number of input columns and continues until the last column is complete. It maps to the relevant DOVAMO cell using the input at the top of the sheet.</p>
-      </section>
-      <section class="main-section" id="calculations">
-        <header><h2>Calculations</h2></header>
-        <p>The is calculates results:</p>
-        <code><pre>Calculate
+      DSheet = Workbooks(SS).Worksheets("Inputs").Cells(2, ICol).Value
+      DCol = Workbooks(SS).Worksheets("Inputs").Cells(3, ICol).Value
+      DRow = Workbooks(SS).Worksheets("Inputs").Cells(4, ICol).Value
+      DCell = DCol & DRow
+                      
+      Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value = 1
+      
+      'Reference Case Inputs
+      Do
+          ICol = ICol + 1
+      
+          DSheet = Workbooks(SS).Worksheets("Inputs").Cells(2, ICol).Value
+          DCol = Workbooks(SS).Worksheets("Inputs").Cells(3, ICol).Value
+          DRow = Workbooks(SS).Worksheets("Inputs").Cells(4, ICol).Value
+      
+          If DCol = "START" Then
+              DCol = Application.WorksheetFunction.VLookup(RefCaseStartYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
+          ElseIf DCol = "END" Then
+              DCol = Application.WorksheetFunction.VLookup(RefCaseEndYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
+          ElseIf DCol = "CAPEX" Then
+              DCol = Application.WorksheetFunction.VLookup(RefCaseCapexYear, Workbooks(SS).Worksheets("Setup").Range("YearLookup"), 2, False)
+          Else
+          End If
+                      
+          DCell = DCol & DRow
+                      
+          If Len(DSheet) = 0 Then
+      
+          Else
+              Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value = Workbooks(SS).Worksheets("Inputs").Cells(IRow, ICol).Value
+              Windows(DOVAMO).Activate
+              End If
+      Loop Until ICol = LastCol
+      Calculate
+      
+      'Reference Case Capital Lease Goal Seek
+      If Workbooks(DOVAMO).Worksheets("User Inputs RC").Range("AL988").Value = 1 Then
+          Application.Run "'" & DOVAMO & "'!CE_Goal_Seek_AOR_BC"
+      Else
+      End If
+  
+      'Reference Case Operating Lease Goal Seek
+      If Workbooks(DOVAMO).Worksheets("User Inputs RC").Range("AO988").Value = 1 Then
+          Application.Run "'" & DOVAMO & "'!CE_Goal_Seek_AOR_TOL_BC"
+      Else
+      End If
+                
+  Else
+      'No Reference Case
+      DSheet = Workbooks(SS).Worksheets("Inputs").Cells(2, ICol).Value
+      DCol = Workbooks(SS).Worksheets("Inputs").Cells(3, ICol).Value
+      DRow = Workbooks(SS).Worksheets("Inputs").Cells(4, ICol).Value
+      DCell = DCol & DRow
+      
+      Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value = 2
+      
+  End If</pre></code>
+      <p>The script automatically detects the number of input columns and continues until the last column is complete. It maps to the relevant DOVAMO cell using the input at the top of the sheet.</p>
+    </section>
+    <section class="main-section" id="calculations">
+      <header><h2>Calculations</h2></header>
+      <p>The is calculates results:</p>
+      <code><pre>Calculate
 
 'Check Scenarios
 If Workbooks(SS).Worksheets("Menu").Range("C8").Value = "Yes" Then
-    
-    'Scenarios
-    'Run Scenarios Macro
-    Application.Run "'" & DOVAMO & "'!Run_Scenarios"
-    Calculate
-    ICol = Workbooks(SS).Worksheets("Setup").Range("H9").Value
-    
-    'Copy Scenarios Results
-    Do
-        DSheet = Workbooks(SS).Worksheets("Results").Cells(2, ICol).Value
-        DCol = Workbooks(SS).Worksheets("Results").Cells(3, ICol).Value
-        DRow = Workbooks(SS).Worksheets("Results").Cells(4, ICol).Value
-    
-        DCell = DCol & DRow
-    
-        If Len(DSheet) = 0 Then
-    
-        Else
-            Workbooks(SS).Worksheets("Results").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
-            Windows(DOVAMO).Activate
-        End If
-                        
-        ICol = ICol + 1
-    Loop Until ICol = Workbooks(SS).Worksheets("Setup").Range("H10").Value
-            
+  
+  'Scenarios
+  'Run Scenarios Macro
+  Application.Run "'" & DOVAMO & "'!Run_Scenarios"
+  Calculate
+  ICol = Workbooks(SS).Worksheets("Setup").Range("H9").Value
+  
+  'Copy Scenarios Results
+  Do
+      DSheet = Workbooks(SS).Worksheets("Results").Cells(2, ICol).Value
+      DCol = Workbooks(SS).Worksheets("Results").Cells(3, ICol).Value
+      DRow = Workbooks(SS).Worksheets("Results").Cells(4, ICol).Value
+  
+      DCell = DCol & DRow
+  
+      If Len(DSheet) = 0 Then
+  
+      Else
+          Workbooks(SS).Worksheets("Results").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
+          Windows(DOVAMO).Activate
+      End If
+                      
+      ICol = ICol + 1
+  Loop Until ICol = Workbooks(SS).Worksheets("Setup").Range("H10").Value
+          
 Else
-    'No Scenarios
+  'No Scenarios
 End If</pre>
-        </code>
-        <p>It also check whethe there are scearios and also runs those if so.</p>
-      </section>
-      <section class="main-section" id="results">
-        <header><h2>Results</h2></header>
-        <p>The final script grabs the results from the DOVAMO and populates the results sheet</p>
-        <code><pre>'Copy Standard Results
+      </code>
+      <p>It also check whethe there are scearios and also runs those if so.</p>
+    </section>
+    <section class="main-section" id="results">
+      <header><h2>Results</h2></header>
+      <p>The final script grabs the results from the DOVAMO and populates the results sheet</p>
+      <code><pre>'Copy Standard Results
 Workbooks(SS).Worksheets("Results").Cells(IRow, 2).Value = Workbooks(SS).Worksheets("Inputs").Cells(IRow, 2).Value
 Workbooks(SS).Worksheets("Results").Cells(IRow, 3).Value = Workbooks(SS).Worksheets("Inputs").Cells(IRow, 3).Value
 Workbooks(SS).Worksheets("Results").Cells(IRow, 4).Value = Workbooks(SS).Worksheets("Inputs").Cells(IRow, 4).Value
@@ -288,20 +267,20 @@ Workbooks(SS).Worksheets("Results").Cells(IRow, 6).Value = Workbooks(SS).Workshe
 ICol = Workbooks(SS).Worksheets("Setup").Range("H12").Value
 
 Do
-    DSheet = Workbooks(SS).Worksheets("Results").Cells(2, ICol).Value
-    DCol = Workbooks(SS).Worksheets("Results").Cells(3, ICol).Value
-    DRow = Workbooks(SS).Worksheets("Results").Cells(4, ICol).Value
-    
-    DCell = DCol & DRow
-    
-    If Len(DSheet) = 0 Then
-    
-    Else
-        Workbooks(SS).Worksheets("Results").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
-        Windows(DOVAMO).Activate
-    End If
-                        
-    ICol = ICol + 1
+  DSheet = Workbooks(SS).Worksheets("Results").Cells(2, ICol).Value
+  DCol = Workbooks(SS).Worksheets("Results").Cells(3, ICol).Value
+  DRow = Workbooks(SS).Worksheets("Results").Cells(4, ICol).Value
+  
+  DCell = DCol & DRow
+  
+  If Len(DSheet) = 0 Then
+  
+  Else
+      Workbooks(SS).Worksheets("Results").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
+      Windows(DOVAMO).Activate
+  End If
+                      
+  ICol = ICol + 1
 Loop Until ICol = Workbooks(SS).Worksheets("Setup").Range("H13").Value
 
 'Copy Commitments
@@ -314,20 +293,20 @@ Workbooks(SS).Worksheets("Commitments").Cells(IRow, 6).Value = Workbooks(SS).Wor
 ICol = Workbooks(SS).Worksheets("Setup").Range("H15").Value
 
 Do
-    DSheet = Workbooks(SS).Worksheets("Commitments").Cells(2, ICol).Value
-    DCol = Workbooks(SS).Worksheets("Commitments").Cells(3, ICol).Value
-    DRow = Workbooks(SS).Worksheets("Commitments").Cells(4, ICol).Value
-    
-    DCell = DCol & DRow
-    
-    If Len(DSheet) = 0 Then
-    
-    Else
-        Workbooks(SS).Worksheets("Commitments").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
-        Windows(DOVAMO).Activate
-    End If
-                        
-    ICol = ICol + 1
+  DSheet = Workbooks(SS).Worksheets("Commitments").Cells(2, ICol).Value
+  DCol = Workbooks(SS).Worksheets("Commitments").Cells(3, ICol).Value
+  DRow = Workbooks(SS).Worksheets("Commitments").Cells(4, ICol).Value
+  
+  DCell = DCol & DRow
+  
+  If Len(DSheet) = 0 Then
+  
+  Else
+      Workbooks(SS).Worksheets("Commitments").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
+      Windows(DOVAMO).Activate
+  End If
+                      
+  ICol = ICol + 1
 Loop Until ICol = Workbooks(SS).Worksheets("Setup").Range("H16").Value
 
 'Copy Cash Flow
@@ -340,20 +319,20 @@ Workbooks(SS).Worksheets("Cash Flow").Cells(IRow, 6).Value = Workbooks(SS).Works
 ICol = Workbooks(SS).Worksheets("Setup").Range("H18").Value
 
 Do
-    DSheet = Workbooks(SS).Worksheets("Cash Flow").Cells(2, ICol).Value
-    DCol = Workbooks(SS).Worksheets("Cash Flow").Cells(3, ICol).Value
-    DRow = Workbooks(SS).Worksheets("Cash Flow").Cells(4, ICol).Value
-    
-    DCell = DCol & DRow
-    
-    If Len(DSheet) = 0 Then
-    
-    Else
-        Workbooks(SS).Worksheets("Cash Flow").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
-        Windows(DOVAMO).Activate
-    End If
-                        
-    ICol = ICol + 1
+  DSheet = Workbooks(SS).Worksheets("Cash Flow").Cells(2, ICol).Value
+  DCol = Workbooks(SS).Worksheets("Cash Flow").Cells(3, ICol).Value
+  DRow = Workbooks(SS).Worksheets("Cash Flow").Cells(4, ICol).Value
+  
+  DCell = DCol & DRow
+  
+  If Len(DSheet) = 0 Then
+  
+  Else
+      Workbooks(SS).Worksheets("Cash Flow").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
+      Windows(DOVAMO).Activate
+  End If
+                      
+  ICol = ICol + 1
 Loop Until ICol = Workbooks(SS).Worksheets("Setup").Range("H19").Value
 
 
@@ -367,20 +346,20 @@ Workbooks(SS).Worksheets("GRI").Cells(IRow, 6).Value = Workbooks(SS).Worksheets(
 ICol = Workbooks(SS).Worksheets("Setup").Range("H21").Value
 
 Do
-    DSheet = Workbooks(SS).Worksheets("GRI").Cells(2, ICol).Value
-    DCol = Workbooks(SS).Worksheets("GRI").Cells(3, ICol).Value
-    DRow = Workbooks(SS).Worksheets("GRI").Cells(4, ICol).Value
-    
-    DCell = DCol & DRow
-    
-    If Len(DSheet) = 0 Then
-    
-    Else
-        Workbooks(SS).Worksheets("GRI").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
-        Windows(DOVAMO).Activate
-    End If
-                        
-    ICol = ICol + 1
+  DSheet = Workbooks(SS).Worksheets("GRI").Cells(2, ICol).Value
+  DCol = Workbooks(SS).Worksheets("GRI").Cells(3, ICol).Value
+  DRow = Workbooks(SS).Worksheets("GRI").Cells(4, ICol).Value
+  
+  DCell = DCol & DRow
+  
+  If Len(DSheet) = 0 Then
+  
+  Else
+      Workbooks(SS).Worksheets("GRI").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
+      Windows(DOVAMO).Activate
+  End If
+                      
+  ICol = ICol + 1
 Loop Until ICol = Workbooks(SS).Worksheets("Setup").Range("H22").Value
 
 
@@ -394,68 +373,68 @@ Workbooks(SS).Worksheets("P&L").Cells(IRow, 6).Value = Workbooks(SS).Worksheets(
 ICol = Workbooks(SS).Worksheets("Setup").Range("H24").Value
 
 Do
-    DSheet = Workbooks(SS).Worksheets("P&L").Cells(2, ICol).Value
-    DCol = Workbooks(SS).Worksheets("P&L").Cells(3, ICol).Value
-    DRow = Workbooks(SS).Worksheets("P&L").Cells(4, ICol).Value
-    
-    DCell = DCol & DRow
-    
-    If Len(DSheet) = 0 Then
-    
-    Else
-        Workbooks(SS).Worksheets("P&L").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
-        Windows(DOVAMO).Activate
-    End If
-                        
-    ICol = ICol + 1
+  DSheet = Workbooks(SS).Worksheets("P&L").Cells(2, ICol).Value
+  DCol = Workbooks(SS).Worksheets("P&L").Cells(3, ICol).Value
+  DRow = Workbooks(SS).Worksheets("P&L").Cells(4, ICol).Value
+  
+  DCell = DCol & DRow
+  
+  If Len(DSheet) = 0 Then
+  
+  Else
+      Workbooks(SS).Worksheets("P&L").Cells(IRow, ICol).Value = Workbooks(DOVAMO).Worksheets(DSheet).Range(DCell).Value
+      Windows(DOVAMO).Activate
+  End If
+                      
+  ICol = ICol + 1
 Loop Until ICol = Workbooks(SS).Worksheets("Setup").Range("H25").Value</pre>
 </code>
-      </section>
-      <section class="main-section" id="loop">
-          <header><h2>Loop</h2></header>
-          <p>Finally, the script loops back and repeats until the final case has been run:</p>
-          <code><pre>
-          
-            'Check Save
-            If Workbooks(SS).Worksheets("Menu").Range("C9").Value = "Yes" Then
-                'If the user asked to save DOVAMOs
-                Windows(DOVAMO).Activate
-                'Save the DOVAMO, using the date, site name and description as a filename
-                Calculate
-                SavePath = Workbooks(SS).Worksheets("Menu").Range("C2").Value & Year(Now()) & "-" & Month(Now()) & "-" & Day(Now()) & " " & Workbooks(DOVAMO).Worksheets("User Inputs IC").Range("AK19")
-                ActiveWorkbook.SaveAs (SavePath)
-                'Then close it
-                ActiveWorkbook.Close
-                'Then re-open the blank one
-                Windows(SS).Activate
-                Workbooks.Open Filename:=Workbooks(SS).Worksheets("Menu").Range("C2").Value & Workbooks(SS).Worksheets("Menu").Range("C4").Value
-                Windows(SS).Activate
-            Else
-                'Close & Re-open
-                Windows(DOVAMO).Activate
-                ActiveWorkbook.Close False
-                Windows(SS).Activate
-                Workbooks.Open Filename:=Workbooks(SS).Worksheets("Menu").Range("C2").Value & Workbooks(SS).Worksheets("Menu").Range("C4").Value
-                Windows(SS).Activate
-            End If
+    </section>
+    <section class="main-section" id="loop">
+        <header><h2>Loop</h2></header>
+        <p>Finally, the script loops back and repeats until the final case has been run:</p>
+        <code><pre>
         
-        'Keep looping the macro until it has done as many records as the user requested
-        Loop Until IRow = LastRow
-    End If
-            
+          'Check Save
+          If Workbooks(SS).Worksheets("Menu").Range("C9").Value = "Yes" Then
+              'If the user asked to save DOVAMOs
+              Windows(DOVAMO).Activate
+              'Save the DOVAMO, using the date, site name and description as a filename
+              Calculate
+              SavePath = Workbooks(SS).Worksheets("Menu").Range("C2").Value & Year(Now()) & "-" & Month(Now()) & "-" & Day(Now()) & " " & Workbooks(DOVAMO).Worksheets("User Inputs IC").Range("AK19")
+              ActiveWorkbook.SaveAs (SavePath)
+              'Then close it
+              ActiveWorkbook.Close
+              'Then re-open the blank one
+              Windows(SS).Activate
+              Workbooks.Open Filename:=Workbooks(SS).Worksheets("Menu").Range("C2").Value & Workbooks(SS).Worksheets("Menu").Range("C4").Value
+              Windows(SS).Activate
+          Else
+              'Close & Re-open
+              Windows(DOVAMO).Activate
+              ActiveWorkbook.Close False
+              Windows(SS).Activate
+              Workbooks.Open Filename:=Workbooks(SS).Worksheets("Menu").Range("C2").Value & Workbooks(SS).Worksheets("Menu").Range("C4").Value
+              Windows(SS).Activate
+          End If
+      
+      'Keep looping the macro until it has done as many records as the user requested
+      Loop Until IRow = LastRow
+  End If
+          
 'Return to the support sheet and calculate to refresh any formulas
 Windows(SS).Activate
 Calculate</pre></code>
-          <p>It does this by:</p>
-          <ul class="para">
-              <li>Step 1</li>
-              <li>Step 2</li>
-              <li>Step 3</li>
-              <li>Step 4</li>
-              <li>Step 5</li>
-          </ul>
-        </section>
-    </main>
-
-  </body>
-</html
+        <p>It does this by:</p>
+        <ul class="para">
+            <li>Step 1</li>
+            <li>Step 2</li>
+            <li>Step 3</li>
+            <li>Step 4</li>
+            <li>Step 5</li>
+        </ul>
+      </section>
+  </main>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
