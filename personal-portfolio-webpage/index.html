@@ -5,13 +5,6 @@
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <title>freeCodeCamp - Personal Portfolio Page</title>
-    <style>
-    @media (max-width: 600px) {
-      nav {flex-direction: column;}
-      ul.nav-links {justify-content: space-between;
-                    margin-bottom: 20px;}
-    }
-    </style>
   </head>
   <body>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
@@ -33,23 +26,30 @@
       <section id="projects">
         <h1 class="projects">Some of my projects...</h1>
         <div class="tiles">
-          <a href="../tribute-page/index.html" target="_blank" class="project-tile">
-            <h3 class="projectlink">Tribute Page</h3>
-            <img src="tribute-page.png" alt="Tribute Page">
-          </a>
-          <a href="../survey-form/index.html" target="_blank" class="project-tile">
+          <div class="project-tile">
+            <a href="../tribute-page/index.html" target="_blank">
+              <h3 class="projectlink">Tribute Page</h3>
+              <img src="tribute-page.png" alt="Tribute Page">
+            </a>
+          </div>
+          <div class="project-tile">
+          <a href="../survey-form/index.html" target="_blank">
               <h3 class="projectlink">Survey Form</h3>
               <img src="survey-form.png" alt="Tribute Page">
           </a>
-          <a href="../product-landing-page/index.html" target="_blank" class="project-tile">
+          </div>
+          <div class="project-tile">
+          <a href="../product-landing-page/index.html" target="_blank">
               <h3 class="projectlink">Product Landing Page</h3>
               <img src="product-landing-page.png" alt="Tribute Page">
           </a>
-          <a href="../technical-documentation-page/index.html" target="_blank" class="project-tile">
+          </div>
+          <div class="project-tile">
+          <a href="../technical-documentation-page/index.html" target="_blank">
               <h3 class="projectlink">Technical Documentation Page</h3>
               <img src="technical-documentation-page.png" alt="Tribute Page">
           </a>
-
+        </div>
         </div>
       </section>
       <section id="contact">

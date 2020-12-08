@@ -1,8 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-family: 'Muli', Arial, Helvetica, sans-serif;
-  font-size: calc(1em + 1vw)
+  font-size: calc(1em + 1vw);
 }
 
 nav {
@@ -18,7 +22,6 @@ nav {
   top: 0;
   left: 0;
 }
-
 
 h1.nav-logo {
   color: white;
@@ -48,6 +51,16 @@ a.nav-link {
   color: white;
   font-weight: bold;
   text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  ul.nav-links {
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
 }
 
 section {
@@ -105,23 +118,30 @@ h1.projects {
   align-items: center;
 }
 
-a.project-tile {
+.project-tile {
   width: 350px;
   margin: 30px;
+  padding: 0;
   border: 1px solid #1C2541;
-  text-decoration: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 0 4px #1C2541;
 }
 
+
+
 h3.projectlink {
-  width: auto; 
   padding: 0.5rem 0px;
   margin: 0px;
   font-size: 0.7rem;
   color: #D1D1D1;
   background-color: #1C2541;
   text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 section#contact {
@@ -151,9 +171,6 @@ h2.contact {
   text-decoration: none;
 }
 
-a#profile-link {text-decoration: none;}
+a {text-decoration: none;}
 
-img {
-  width: 350px;
-  height: 350px;
-}
+
