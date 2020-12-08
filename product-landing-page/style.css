@@ -7,7 +7,8 @@ html, body {
 }
 
 main {
-  margin-top: 200px;
+  margin-top: 240px;
+  padding: 0px 10px;
 }
 
 header {
@@ -17,9 +18,15 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 2;
 }
 
-
+nav {
+  background-color: #180821;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
 
 .nav-link {
   color: #FAEDCA;
@@ -60,6 +67,7 @@ h1 {
 video {
   margin: 0px auto;
   display: block;
+  width: 100%;
 }
 
 input#email {
@@ -80,8 +88,15 @@ input#submit {
   border-radius: 10px;
   color: white;
   font-family: 'Poppins';
+  cursor: pointer;
 }
+
 
 p {
   font-size: 1.6rem;
+}
+
+@media (min-width: 700px) {
+  nav {flex-direction: row;}
+  main {margin-top: 200px;}
 }
