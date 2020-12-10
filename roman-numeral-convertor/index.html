@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roman Numeral Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="main">
+  <main>
+      <h1>Roman Numeral Converter</h1>
+      <input type="number"
+      id="inputNum" maxlength="4"
+      placeholder="0"
+      oninput="javascript:
+      if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+      <div class="plaque">
+      <h2 id="output"></h1>
+      </div>
+  </main>
+  <script src="roman-numeral-converter.js"></script>
+</body>
+</html>

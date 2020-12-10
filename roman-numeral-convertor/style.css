@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #DDD;
+}
+
+main {
+  height: 100vh;
+  text-align: center;
+  padding: 5vw;
+}
+
+h1 {
+  margin-bottom: 5vw;
+  color: #333;
+  font-family: Montserrat, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 5vw;
+}
+
+input[type=number] {
+  width: 90vw;
+  height: 30vw;
+  padding: 10px;
+  margin-bottom: 5vw;
+  outline: none;
+  background-color: #222;
+  border: none;
+  box-shadow: 0 0 20px #14591D;
+  border-radius: 4px;
+  font-size: 20vw;
+  font-family: Orbitron, sans-serif;
+  text-align: center;
+  color: #26b952;
+}
+
+::placeholder {
+  color: #5e8d6c;
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+::-ms-input-placeholder  {
+  color: #5e8d6c;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.plaque {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 5vw;
+  width: 90vw;
+  height: 50vw;
+  max-width: 672px;
+  max-height: 360px;
+  background-image: url(plaque.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 20px #333;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  max-width: 69vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-size: 10vw;
+  overflow-wrap: break-word;
+}
