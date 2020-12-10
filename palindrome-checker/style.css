@@ -1,0 +1,49 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 5vw;
+  background-color: #333;
+}
+
+main {
+  height: calc(100vh - 5vw);
+  text-align: center;
+  padding: calc(50vh - 75px - 5vw) 5vw calc(50vh - 75px);
+}
+
+input[type=text] {
+  width: 100%;
+  max-width: 1200px;
+  height: 150px;
+  padding: 10px;
+  outline: none;
+  background-color: #AAA;
+  border: none;
+  border-radius: 10px;
+  font-size: 6vw;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #333;
+}
+
+body.green {
+  background-color: #14591D;
+}
+
+input[type=text].green {
+  background-color: #52c261;
+  color: #14591D;
+}
+
+body.red {
+  background-color: #790a0a;
+}
+
+input[type=text].red {
+  background-color: #e92424;
+  color: #790a0a;
+}
