@@ -28,6 +28,8 @@ h1 {
 input[type=number] {
   width: 90vw;
   height: 30vw;
+  max-width: 672px;
+  max-height: 250px;
   padding: 10px;
   margin-bottom: 5vw;
   outline: none;
@@ -39,6 +41,20 @@ input[type=number] {
   font-family: Orbitron, sans-serif;
   text-align: center;
   color: #26b952;
+}
+
+@media (min-width: 900px) {
+  input[type=number] {
+    font-size: 180px;
+    margin-bottom: 45px;
+  }
+  h1 {
+    font-size: 45px;
+    margin-bottom: 45px;
+  }
+  main {
+    padding: 45px;
+  }
 }
 
 ::placeholder {
