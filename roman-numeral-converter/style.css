@@ -43,20 +43,6 @@ input[type=number] {
   color: #26b952;
 }
 
-@media (min-width: 900px) {
-  input[type=number] {
-    font-size: 180px;
-    margin-bottom: 45px;
-  }
-  h1 {
-    font-size: 45px;
-    margin-bottom: 45px;
-  }
-  main {
-    padding: 45px;
-  }
-}
-
 ::placeholder {
   color: #5e8d6c;
 }
@@ -91,17 +77,35 @@ input[type=number] {
   background-repeat: no-repeat;
   box-shadow: 0 0 20px #333;
   text-align: center;
-  overflow-wrap: break-word;
+  overflow-x: ;
 }
 
 h2 {
   font-family: 'Times New Roman', Times, serif;
-  max-width: 69vw;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #333;
-  font-size: 10vw;
+  font-size: 8vw;
   overflow-wrap: break-word;
+  width: 69vw;
+  max-width: 540px;
+}
+
+@media (min-width: 900px) {
+  input[type=number] {
+    font-size: 180px;
+    margin-bottom: 45px;
+  }
+  h1 {
+    font-size: 45px;
+    margin-bottom: 45px;
+  }
+  main {
+    padding: 45px;
+  }
+  h2 {
+    font-size: 80px;
+  }
 }
