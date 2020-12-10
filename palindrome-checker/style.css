@@ -5,14 +5,15 @@
 }
 
 body {
-  padding-top: 5vw;
   background-color: #333;
 }
 
 main {
-  height: calc(100vh - 5vw);
+  height: 100vh;
   text-align: center;
-  padding: calc(50vh - 75px - 5vw) 5vw calc(50vh - 75px);
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: calc(50vh - 75px);
 }
 
 input[type=text] {
