@@ -1,30 +1,32 @@
-function rot13(str) {
+const inputText = document.getElementById("inputText");
+const outputP = document.getElementById("outputText");
+const button = document.getElementById("button");
 
-  function toUniCode(x) {
-    return x;
-  }
-
-  var arr = str.split("");
-  console.log(arr);
-
-  var codes = arr.map(x => x.charCodeAt())
-  console.log(codes);
-
-  var newCodes = codes.map(x => {
-      if (x < 65 || x > 90) {return x;};
-      if (x <= 77) {return x+13;}
-      else {return x+13-90+64}
-    })
-  
-  console.log(newCodes)  
-
-  var newArr = newCodes.map(x => String.fromCharCode(x))
-  console.log(newArr)
-  
-  var newStr = newArr.join("")
-  console.log(newStr)
-
-  return newStr;
+function shiftCodes(arr) {
+  return arr.map(x => {
+    if (x < 65 || x > 90) { return x; }
+    if (x <= 77) { return x + 13; }
+    else { return x + 13 - 90 + 64; }
+  });
 }
 
-rot13("SERR PBQR PNZC");
+function capitalise() {
+  inputText.value = inputText.value.toUpperCase();
+}
+
+function rot13() {
+  var message = inputText.value;
+  var codes = message.split("").map(x => x.charCodeAt());
+  var newCodes = shiftCodes(codes);
+  var newArray = newCodes.map(x => String.fromCharCode(x));
+  var newString = newArray.join("");
+  outputP.innerHTML = newString;
+}
+
+function decipher() {
+  inputText.addEventListener("input", capitalise);
+  button.addEventListener("click", rot13);
+}
+
+decipher();
+// rot13("SERR PBQR PNZC")
