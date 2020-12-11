@@ -10,11 +10,11 @@ function removeClass(x) {
 function addClass(x) {
   inputText.classList.add(x);
   body.classList.add(x);
-};
+}
 
 function getArr() {
   return inputText.value.toLowerCase().match(regex);
-};
+}
 
 function checkLength() {
   if (inputText.value.length === 0) {
@@ -26,7 +26,7 @@ function checkLength() {
   } else {
     checkPalindrome();
   }
-};
+}
 
 function numChecks(x) {
   if (x % 2 === 0) {
@@ -45,12 +45,12 @@ function checkPalindrome() {
   for (i ; i <= k ; i++) {
     console.log(arr[i], arr[j]);
     if (arr[i] !== arr[j]) {
-      removeClass('green')
-      addClass('red')
+      removeClass('green');
+      addClass('red');
       return;
     } else {
-      removeClass('red')
-      addClass('green')
+      removeClass('red');
+      addClass('green');
     }
     j--;
   }
