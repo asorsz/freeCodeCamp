@@ -1,78 +1,143 @@
-  var currency = [
-    {name: "ONE HUNDRED", val: 100},
-    {name: "TWENTY", val: 20},
-    {name: "TEN", val: 10},
-    {name: "FIVE", val: 5},
-    {name: "ONE", val: 1},
-    {name: "QUARTER", val: 0.25},
-    {name: "DIME", val: 0.1},
-    {name: "NICKEL", val: 0.05},
-    {name: "PENNY", val: 0.01}
-  ]
+const REGISTER_STATUS = {"closed": "CLOSED",
+  "open": "OPEN",
+  "shortfall": "INSUFFICIENT FUNDS"
+};
+const CURRENCY_VALUES = {
+  "ONE HUNDRED": 100,
+  "TWENTY": 20,
+  "TEN": 10,
+  "FIVE": 5,
+  "ONE": 1,
+  "QUARTER": 0.25,
+  "DIME": 0.1,
+  "NICKEL": 0.05,
+  "PENNY": 0.01
+};
 
-function checkCashRegister(price, cash, cid) {
+const cashRegisterIDs = {
+  "ONE HUNDRED": "Hundreds",
+  "TWENTY": "Twenties",
+  "TEN": "Tens",
+  "FIVE": "Fives",
+  "ONE": "Ones",
+  "QUARTER": "Quarters",
+  "DIME": "Dimes",
+  "NICKEL": "Nickels",
+  "PENNY": "Cents"
+}
 
-  var change = {status: "", change: []}
-  var totalChange = cash - price;
-  
-  var till = cid.reduce(
-    function(acc, curr) {
-      acc.total += curr[1];
-      acc.[curr[0]] = curr[1];
-      acc.total = Math.round(acc.total * 100) / 100
-      return acc;
-    },
-    {total: 0}
-  )
+const changeIDs = {
+  "ONE HUNDRED": "changeHundreds",
+  "TWENTY": "changeTwenties",
+  "TEN": "changeTens",
+  "FIVE": "changeFives",
+  "ONE": "changeOnes",
+  "QUARTER": "changeQuarters",
+  "DIME": "changeDimes",
+  "NICKEL": "changeNickels",
+  "PENNY": "changeVents"
+}
 
- console.log(till)
+const button = document.getElementById("calculateChange");
+const statusArea = document.getElementById("status");
 
-  if (totalChange > till.total) {
-    change.status = "INSUFFICIENT_FUNDS";
-    console.log(change);
-    return change;
+function getChangeAvailable(cashInDrawer) {
+  return cashInDrawer
+  .reduce((acc, curr) => acc += curr[1], 0)
+  .toFixed(2);
+}
+
+function getRegisterStatus(changeNeeded, changeAvailable) {
+  if (Number(changeNeeded) > Number(changeAvailable)) {
+    return REGISTER_STATUS.shortfall;
+  } else if (Number(changeNeeded) < Number(changeAvailable)) {
+    return REGISTER_STATUS.open;
+  } else {
+    return REGISTER_STATUS.closed;
   }
+}
 
-  if (totalChange == till.total) {
-    change.status = "CLOSED";
-    change.change = cid;
-    console.log(change)
-    return change;
-  }
+function getChange(changeNeeded, cashInDrawer) {
+  let change = [];
+  for (let i = cashInDrawer.length - 1; i >= 0; i--) {
+    const currName = cashInDrawer[i][0];
+    const currTotal = cashInDrawer[i][1];
+    const currValue = CURRENCY_VALUES[currName];
 
-  var change_arr = currency.reduce(function(acc, curr) {
-    var value = 0;
-    while (till[curr.name] > 0 && totalChange >= curr.val) {
-      totalChange -= curr.val;
-      till[curr.name] -= curr.val;
-      value += curr.val;
+    let currAmount = (currTotal / currValue).toFixed(2);
+    let currToReturn = 0;
 
-      // Round change to the nearest hundreth deals with precision errors
-      totalChange = Math.round(totalChange * 100) / 100;
-      value = Math.round(value * 100) / 100;
+    while (changeNeeded >= currValue && currAmount > 0) {
+      changeNeeded = (changeNeeded - currValue).toFixed(2);
+      currAmount--;
+      currToReturn++;
     }
-    // Add this denomination to the output only if any was used.
-    if (value > 0) {
-      acc.push([curr.name, value]);
+
+    if (currToReturn > 0) {
+      change.push([currName, currToReturn * currValue])
     }
-    return acc; // Return the current change_arr
-  }, []); // Initial value of empty array for reduce
 
-  console.log(change_arr)
-
-  // If there are no elements in change_arr or we have leftover change, return
-  // the string "Insufficient Funds"
-  if (change_arr.length < 1 || totalChange > 0) {
-    change.status = "INSUFFICIENT_FUNDS";
-    console.log(change)
-    return change;
   }
-
-
-  change.status = "OPEN";
-  change.change = change_arr;
-  console.log(change)
   return change;
 }
 
-checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
+function checkCashRegister(price, cash, cid) {
+  let cashRegister = { "status": "", "change": cid };
+  const changeNeeded = parseFloat(cash - price).toFixed(2);
+  const changeAvailable = getChangeAvailable(cid);
+
+  cashRegister.status = getRegisterStatus(changeNeeded, changeAvailable);
+
+  if (cashRegister.status === REGISTER_STATUS.shortfall) {
+    cashRegister.change = [];
+    statusArea.classList.add("text-danger");    
+  } else if (cashRegister.status === REGISTER_STATUS.closed) { 
+    cashRegister.change = [...cid];
+    statusArea.classList.add("text-warning")
+  } else {
+    cashRegister.change = getChange(changeNeeded, cid);
+    statusArea.classList.add("text-success")  
+  }
+  statusArea.innerHTML = cashRegister.status
+  
+  pushChangeOutputs(cashRegister);
+  return cashRegister;
+}
+
+function pushChangeOutputs(cashRegister) {
+  cashRegister.change.forEach((denom, x) => {
+    let outputID = "change" + cashRegisterIDs[denom[0]];
+    document.getElementById(outputID).value = denom[1];
+  });
+}
+
+function getCRInputs() {
+  var inputs = [["PENNY", 0], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0],
+  ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]
+
+  for (let i = 0; i < inputs.length; i++) {
+    inputID = cashRegisterIDs[inputs[i][0]].toLowerCase();
+    inputs[i][1] = Number(document.getElementById(inputID).value);
+  }
+return inputs
+}
+
+function getPPInput() {
+  return document.getElementById("purchasePrice").value;
+}
+
+function getATInput() {
+  return document.getElementById("amountTendered").value
+}
+
+function runProgram() {
+  checkCashRegister(getPPInput(), getATInput(), getCRInputs());
+}
+
+function listeners() {
+  button.addEventListener("click", runProgram);
+}
+
+listeners();
+
+

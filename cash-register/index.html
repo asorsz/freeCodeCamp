@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Cash Register</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .input-group-text {
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-3">Cash Register</h1>
+        <p class="lead">Enter the following to calculate the required change:</p>
+        <ul>
+          <li>Current contents of the cash register</li>
+          <li>Purchase price</li>
+          <li>Money tendered</li>
+        </ul>
+        <hr class="my-2">
+        <br>
+        
+        <div class="row">
+          <div class="col-4">
+            <h5 class="text-center">Cash Register</h3>
+            <label class="sr-only" for="hundreds">100's</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">100</div>
+              </div>
+              <input class="form-control text-right" type="number" id="hundreds">
+            </div>
+            <label class="sr-only" for="twenties">20's</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">20</div>
+              </div>
+              <input class="form-control text-right" type="number" id="twenties">
+            </div>
+            <label class="sr-only" for="tens">10's</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">10</div>
+              </div>
+              <input class="form-control text-right" type="number" id="tens">
+            </div>
+            <label class="sr-only" for="fives">5's</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">5</div>
+              </div>
+              <input class="form-control text-right" type="number" id="fives">
+            </div>
+            <label class="sr-only" for="ones">1's</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">1</div>
+              </div>
+              <input class="form-control text-right" type="number" id="ones">
+            </div>
+            <label class="sr-only" for="quarters">Quarterss</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">0.25</div>
+              </div>
+              <input class="form-control text-right" type="number" id="quarters">
+            </div>
+            <label class="sr-only" for="dimes">Dimes</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">0.10</div>
+              </div>
+              <input class="form-control text-right" type="number" id="dimes">
+            </div>
+            <label class="sr-only" for="nickels">Nickels</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">0.05</div>
+              </div>
+              <input class="form-control text-right" type="number" id="nickels">
+            </div>
+            <label class="sr-only" for="cents">Cents</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">0.01</div>
+              </div>
+              <input class="form-control text-right" type="number" id="cents">
+            </div>
+          </div>
+          <div class="col-4 text-center">
+            <h5 class="text-center">Purchase Price</h5>
+            <input class="form-control text-center mb-4" type="number" id="purchasePrice">
+            <h5 class="text-center">Amount Tendered</h5>
+            <input class="form-control text-center mb-4" type="number" id="amountTendered">
+            <button class="btn btn-primary mb-5" id="calculateChange" role="button">Calculate Change</button>
+            <h5 class="text-center">Status</h5>
+            <p class="text-center mb-4" type="text" id="status"></p>
+          </div>
+          <div class="col-4">
+            <h5 class="text-center">Change</h3>
+            <label class="sr-only" for="changeHundreds">100's</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">100</div>
+              </div>
+              <input class="form-control text-right" type="number" id="changeHundreds">
+            </div>
+            <label class="sr-only" for="changeTwenties">20's</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">20</div>
+              </div>
+              <input class="form-control text-right" type="number" id="changeTwenties">
+            </div>
+            <label class="sr-only" for="changeTens">10's</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">10</div>
+              </div>
+              <input class="form-control text-right" type="number" id="changeTens">
+            </div>
+            <label class="sr-only" for="changeFives">5's</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">5</div>
+              </div>
+              <input class="form-control text-right" type="number" id="changeFives">
+            </div>
+            <label class="sr-only" for="changeOnes">1's</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">1</div>
+              </div>
+              <input class="form-control text-right" type="number" id="changeOnes">
+            </div>
+            <label class="sr-only" for="changeQuarters">Quarterss</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">0.25</div>
+              </div>
+              <input class="form-control text-right" type="number" id="changeQuarters">
+            </div>
+            <label class="sr-only" for="changeDimes">Dimes</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">0.10</div>
+              </div>
+              <input class="form-control text-right" type="number" id="changeDimes">
+            </div>
+            <label class="sr-only" for="changeNickels">Nickels</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">0.05</div>
+              </div>
+              <input class="form-control text-right" type="number" id="changeNickels">
+            </div>
+            <label class="sr-only" for="changeCentss">Cents</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">0.01</div>
+              </div>
+              <input class="form-control text-right" type="number" id="changeCents">
+            </div>
+          </div>
+        </div>
+      
+        </p>
+      </div>
+    </div>
+
+  </main>
+  
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+  <script src="cash-register.js"></script>
+</body>
+</html>
