@@ -58,7 +58,7 @@ input[type=submit] {
   background-color: #ff7300;
   cursor: pointer;
   text-transform: uppercase;
-  
+  display: block;
   transition-duration: 0.4s;
   overflow: hidden;
 }
@@ -84,13 +84,6 @@ input[type=submit]:active {
   margin-top: -120%;
   opacity: 0;
   transition: all 0.8s
-}
-
-.button:active:after {
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  transition: 0s
 }
 
 .button:focus { outline:0; }
@@ -122,4 +115,21 @@ input[type=submit]:active {
 ::-moz-placeholder,
 ::-ms-input-placeholder  {
   color: #AAA;
+}
+
+@media (min-width: 900px) {
+  input[type=text], .output {
+    font-size: 70px;
+    margin-bottom: 45px;
+  }
+  input[type=submit] {
+    margin-bottom: 45px;
+  }
+  h1 {
+    font-size: 45px;
+    margin-bottom: 45px;
+  }
+  main {
+    padding: 45px;
+  }
 }
