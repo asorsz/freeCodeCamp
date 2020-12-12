@@ -1,13 +1,12 @@
-function telephoneCheck(str) {
-  
+const inputText = document.getElementById("phoneNumber");
+const button = document.getElementById("validate");
+const outputP = document.getElementById("validationText");
 
-
+function getTextClass(str) {
   let regexHasLetters = /[^0-9\(\)\- ]/g;
-  console.log(str.match(regexHasLetters))
-  
+    
   if (str.match(regexHasLetters) !== null) {
-    console.log("Contains Invalid Character");
-    return false;
+    return ["Contains invalid character(s)", "text-danger"];
     }
 
   let regexDigits = /[0-9]/g;
@@ -16,29 +15,43 @@ function telephoneCheck(str) {
   
   if (noDigits < 10) {
     console.log("Not Enough Digits");
-    return false;
+    return ["Not enough digits", "text-danger"];
   }
 
   if (noDigits > 11) {
     console.log("Too Many Digits");
-    return false;
+    return ["Too many digits", "text-danger"];
   }
   
   if (noDigits == 11 && str.charAt(0) !== "1") {
     console.log("Incorrect Country Code")
-    return false;
+    return ["Incorrect country code", "text-danger"];
   }
 
   let regexFormat = /^(1\s?)?(\(\d{3}\)|\d{3})[\s-]?\d{3}[\s-]?\d{4}$/g;
   if (regexFormat.test(str)) {
     console.log("Valid");
-    return true;
+    return ["Valid", "text-success"];
   } else {
     console.log("Invalid format");
-    return false;
+    return ["Invalid format", "text-danger"];
   }
-
-  return true;
 }
 
-telephoneCheck("1 555)555-5555");
+function clearText() {
+  outputP.innerHTML = "";
+  outputP.classList.remove("text-danger", "text-success");
+}
+
+function telephoneCheck() {
+  let status = getTextClass(inputText.value);
+  outputP.innerHTML = status[0];
+  outputP.classList.add(status[1]);
+}
+
+function listen() {
+  inputText.addEventListener("input", clearText)
+  button.addEventListener("click", telephoneCheck)
+}
+
+listen();
