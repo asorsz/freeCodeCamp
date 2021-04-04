@@ -1,5 +1,5 @@
 d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json', (data) => {
-  console.log(data);
+
   data.forEach((d) => {
     const t = d.Time.split(':')
     d.newTime = new Date(Date.UTC(1970, 0, 1, 0, t[0], t[1]));
