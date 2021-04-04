@@ -59,3 +59,14 @@ svg {
   border-radius: 5px;
   background: #FFF;
 }
+
+#tooltip {
+  position: absolute;
+  visibility: hidden;
+  padding: 3px;
+  background: #FFF;
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 0.9;
+  border-radius: 2px;
+}
