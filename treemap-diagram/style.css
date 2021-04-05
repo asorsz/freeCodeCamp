@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: calc(10px + 0.3vw);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  font-family: 'Lexend', Arial, Helvetica, sans-serif;
+  background: #d3d3d3;
+  background: linear-gradient(45deg,#d1d1d1 0%,#9e9e9e 50%,#3f3f3f 100%);
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  max-height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+header > h1 {
+  width: 80vw;
+  margin: auto;
+  color: white;
+  font-size: 3rem;
+}
+
+header > h2 {
+  width: 80vw;
+  margin: auto;
+  color: white;
+  font-size: 2rem;
+}
+
+#viz {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+svg {
+  max-width: 1200px;
+  max-height: 900px;
+  border-radius: 5px;
+  background: #FFF;
+}
+
+.label {
+  font-size: 12px;
+  text-align: left;
+  overflow-wrap: break-word;
+  padding: 2px;
+  overflow: visible;
+}
+
+#tooltip {
+  position: absolute;
+  visibility: hidden;
+  padding: 3px;
+  background: #1d1d1d;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  border-radius: 2px;
+  color: #fff;
+}
