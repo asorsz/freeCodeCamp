@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: calc(10px + 0.3vw);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  font-family: 'Lexend', Arial, Helvetica, sans-serif;
+  background: #3892c7;
+  background: linear-gradient(45deg,#3892c7 0%,#1da4f1 50%,#024c7e 100%);
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  max-height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+header > h1 {
+  width: 80vw;
+  margin: auto;
+  color: white;
+  font-size: 3rem;
+}
+
+header > h3 {
+  width: 80vw;
+  margin: auto;
+  color: white;
+  font-size: 1.6rem;
+}
+
+#viz {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+svg {
+  width: calc(100vw - 40px);
+  max-width: 1200px;
+  max-height: 800px;
+  border-radius: 5px;
+  background: #FFF;
+}
+
+#tooltip {
+  position: absolute;
+  visibility: hidden;
+  padding: 3px;
+  background: #1d1d1d;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  border-radius: 2px;
+  color: #fff;
+}
